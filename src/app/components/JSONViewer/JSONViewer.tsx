@@ -2,7 +2,7 @@
 
 import { type FC, useEffect, useState } from 'react'
 import { Loader, Tree, type TreeNodeData, useTree } from '@mantine/core'
-import type { JsonData, TreeNode } from '@/app/components/JSONViewer/types'
+import type { TreeNode } from '@/app/components/JSONViewer/types'
 import { convertJsonToTreeData } from '@/app/components/JSONViewer/convertJsonToTreeData'
 import { HoverActions } from './HoverActions'
 import { roboto } from '@/app/fonts'
@@ -38,7 +38,7 @@ export const JSONViewer: FC<JSONViewerProps> = ({
 
       setTreeData(convertJsonToTreeData(parsedJson))
       setIsLoading(false)
-    } catch (e) {
+    } catch {
       setError('Failed to parse JSON from provided data.')
     }
 
