@@ -1,4 +1,7 @@
-@tailwind base;
+@layer tailwind {
+  @tailwind base;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -17,11 +20,33 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.mantine-Tree-subtree .mantine-Tree-node:first-child > .mantine-Tree-label {
+  @apply pt-0 mt-2;
+}
+
+.mantine-Tree-subtree .mantine-Tree-node:last-child > .mantine-Tree-label {
+  @apply pb-0;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.button {
+  @apply flex items-center justify-center rounded shadow-floating bg-[#F9FAFA] border border-[#DEDFDF] active:bg-[#dddfdf];
 }
