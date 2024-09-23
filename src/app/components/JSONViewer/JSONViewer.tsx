@@ -71,14 +71,10 @@ export const JSONViewer: FC<JSONViewerProps> = ({
         return (
           <div
             {...elementProps}
-            className={`mantine-Tree-label cursor-pointer py-1 ml-[var(--label-offset)]
-                        ${expanded && hasChildren ? 'pb-0' : ''} ${!isFirstLevel && 'border-s-[1px]'}
-                `}
+            className={`mantine-Tree-label cursor-pointer py-1 ${expanded && hasChildren ? 'pb-0' : ''}`}
             style={!isFirstLevel ? { animation: 'slideDown 0.3s' } : {}}
           >
-            <div
-              className={`relative flex items-start gap-1 ${isFirstLevel ? 'pl-3' : 'pl-[11px]'}`}
-            >
+            <div className="relative flex items-start gap-1 pl-3">
               <div>
                 {hasChildren ? (
                   <ExpandButton expanded={expanded} />
@@ -88,7 +84,7 @@ export const JSONViewer: FC<JSONViewerProps> = ({
               </div>
 
               <div className="flex items-start gap-1">
-                <span className="font-medium min-w-2 break-all">
+                <span className="font-medium min-w-2 break-all text-[#1F2020]">
                   {node.nodeProps?.key}{' '}
                   <span className="text-[#606061] text-wrap">
                     {node.nodeProps?.value}
@@ -96,7 +92,7 @@ export const JSONViewer: FC<JSONViewerProps> = ({
                 </span>
 
                 {hasChildren ? (
-                  <span className={`text-[#606061] ${roboto.className}`}>
+                  <span className={`text-[#737474] ${roboto.className}`}>
                     [{node.children?.length} items]
                   </span>
                 ) : null}

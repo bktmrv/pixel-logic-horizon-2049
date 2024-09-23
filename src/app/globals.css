@@ -36,6 +36,11 @@ body {
   @apply pb-0;
 }
 
+.mantine-Tree-subtree {
+  @apply ml-5 !important;
+  @apply border-s-[1px];
+}
+
 @keyframes slideDown {
   0% {
     transform: translateY(-30%);
@@ -48,5 +53,5 @@ body {
 }
 
 .button {
-  @apply flex items-center justify-center rounded shadow-floating bg-[#F9FAFA] border border-[#DEDFDF] active:bg-[#dddfdf];
+  @apply flex items-center justify-center rounded shadow-floating bg-[#F9FAFA] border border-[#DEDFDF] active:bg-[#dddfdf] text-[#1F2020];
 }
